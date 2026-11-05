@@ -1,0 +1,37 @@
+K_eval=1000 status (Asia/Shanghai box-local)
+============================================
+Updated: 2026-11-05 18:59:52 CST
+
+Bank
+----
+path: data/stoch_banks/sd3_k1250_data_root/stochastic_realizations/random/SD3/10x5+mix/
+files: 100
+samples_per_file: 1250 (verified min=max=1250)
+generator: scripts/generate_sd3_10x5_realizations.py --limit 100 --num-samples 1250 --seed 200 --force
+P0 bank under FJSP-DRL (K=450): UNTOUCHED
+
+Job
+---
+started: yes
+pid: 125827
+nice: 15
+runner: scripts/run_k_eval_1000_batched.py
+params: --instances 100 --batch-size 20 --k-eval 1000 --seeds 50,51,52
+        --data-root data/stoch_banks/sd3_k1250_data_root --size 10x5+mix
+out: results/k-eval-1000-summary.json
+rows checkpoint: results/k-eval-1000-summary.rows.json
+log: results/k-eval-1000-run.log
+note: original alns_k_eval_1000.py has no resume; batched wrapper writes partial summary after each 20-instance batch and supports --resume. Same protocol defaults (max_iter=300, time_limit=40s, eval [250:1250], search [0:50]).
+
+CP-600s coexistence
+-------------------
+cp_pid: 76510 (do not kill)
+watch_pid: 112854 (do not kill)
+keval niceness: 15 (prefer lower contention)
+
+Monitor
+-------
+  tail -f /workspace/fjsp-combo-b/results/k-eval-1000-run.log
+  ps -p 125827 -o pid,stat,nice,pcpu,etime,cmd
+  ls -l /workspace/fjsp-combo-b/results/k-eval-1000-summary.json
+  PYTHONPATH=src .venv/bin/python -c "import json; d=json.load(open('results/k-eval-1000-summary.json')); print(d.get('n_instances'), d.get('macro_mean_cmax'))"

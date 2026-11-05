@@ -1,0 +1,26 @@
+# Virtual environments and bytecode
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Large run dumps. Markdown and JSON summaries under results/ stay tracked.
+results/**/*.csv
+results/**/*.log
+results/**/*.jsonl
+*.jsonl
+
+# Regenerated synthetic wiring check (not an SD3 table). See README.
+results/k-eval-smoke.*
+
+# External realization banks (not part of this seed)
+data/stoch_banks/

@@ -1,0 +1,89 @@
+{
+  "protocol": {
+    "kind": "external_sd3",
+    "k_eval": 1000,
+    "eval_slice": [
+      250,
+      1250
+    ],
+    "search_slice": [
+      0,
+      50
+    ],
+    "seeds": [
+      50
+    ],
+    "max_iter": 20,
+    "time_limit_s": 15.0,
+    "destroy": [
+      "random_ops",
+      "critical_path",
+      "high_var_ops",
+      "machine_load"
+    ],
+    "repair": [
+      "spt_biased"
+    ],
+    "alpha": 0.95,
+    "comparable_to_paper_protocol": true,
+    "note": "Eval slice is held out from search. Synthetic kind uses shipped tiny fixtures and an in-process lognormal random-CoV draw; it is a wiring check, not an SD3 table. External kind reads --data-root and does not resample the bank.",
+    "data_root": "/workspace/fjsp-combo-b/data/stoch_banks/sd3_k1250_data_root",
+    "size": "10x5+mix",
+    "scenario_seed": null
+  },
+  "n_instances": 1,
+  "macro_mean_cmax": {
+    "FIFO": 777.895,
+    "MOR": 770.544,
+    "SPT": 819.856,
+    "MWKR": 829.879,
+    "SA-ALNS": 696.089
+  },
+  "macro_mean_var95": {
+    "FIFO": 911.05,
+    "MOR": 921.0,
+    "SPT": 942.0,
+    "MWKR": 988.05,
+    "SA-ALNS": 821.05
+  },
+  "per_instance": {
+    "10x5+mix_001": {
+      "FIFO": {
+        "mean_cmax": 777.895,
+        "std_cmax": 0.0,
+        "var95": 911.05,
+        "seconds": 0.0,
+        "iters": 0.0
+      },
+      "MOR": {
+        "mean_cmax": 770.544,
+        "std_cmax": 0.0,
+        "var95": 921.0,
+        "seconds": 0.0,
+        "iters": 0.0
+      },
+      "SPT": {
+        "mean_cmax": 819.856,
+        "std_cmax": 0.0,
+        "var95": 942.0,
+        "seconds": 0.0,
+        "iters": 0.0
+      },
+      "MWKR": {
+        "mean_cmax": 829.879,
+        "std_cmax": 0.0,
+        "var95": 988.05,
+        "seconds": 0.0,
+        "iters": 0.0
+      },
+      "SA-ALNS": {
+        "mean_cmax": 696.089,
+        "std_cmax": 0.0,
+        "var95": 821.05,
+        "seconds": 0.6699280738830566,
+        "iters": 20.0
+      }
+    }
+  },
+  "spmdan": "N/A \u2014 pretrained SPM-DAN/DAN-stoch weights are not in the public NCO-for-Stochastic-FJSP checkout; this harness does not invent a score."
+}

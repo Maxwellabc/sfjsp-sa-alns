@@ -1,0 +1,90 @@
+SFJSP SA-ALNS handoff
+Compared with the seed archive (fjsp-combo-b/), not with a later edit.
+Git commit on main: 1fcdc26daf129c72d0e9bd734b8850f7e9e8238b
+Experiments were not re-run for this package.
+SPM-DAN remains N/A. No CP-600s, P0 ALNS, or full-100 summary was fabricated.
+evaluate.py is unchanged from the seed and is not in this folder.
+
+Bundled in this handoff directory (final bytes, matching the repo):
+  README.md
+  requirements.txt
+  scripts/alns_k_eval_1000.py
+  src/sfjsp_alns/__init__.py                  changed (version 0.2.0)
+  src/sfjsp_alns/cli.py                       changed
+  src/sfjsp_alns/cp_fold.py                   new
+  src/sfjsp_alns/data_layout.py               new
+  src/sfjsp_alns/io/__init__.py               changed
+  src/sfjsp_alns/io/fjs_text.py               new
+  src/sfjsp_alns/io/fjsp_loader.py            changed
+  src/sfjsp_alns/k_eval.py                    new
+  src/sfjsp_alns/paths.py                     new
+  src/sfjsp_alns/scenarios.py                 new
+
+Copy these paths onto the research box over the same relative locations.
+SHA256SUMS in this directory matches the copies.
+
+Every path changed vs the seed
+------------------------------
+Modified (19):
+  README.md
+  docs/draft-experiments.md
+  docs/paper-draft-sfjsp-alns.md
+  docs/scenario-aware-alns-design.md
+  scripts/alns_full_sd3_10x5.py
+  scripts/alns_m1_smoke.py
+  scripts/alns_p0_sd3_10x5.py
+  scripts/fold_cp600s_into_compare.py
+  scripts/generate_sd3_10x5_realizations.py
+  scripts/rebuild_p0_baselines_compare.py
+  scripts/run_cp_stoch_p0.py
+  scripts/sfjsp_smoke_eval.py
+  scripts/watch_cp600s_and_fold.sh
+  src/sfjsp_alns/__init__.py
+  src/sfjsp_alns/cli.py
+  src/sfjsp_alns/io/__init__.py
+  src/sfjsp_alns/io/fjsp_loader.py
+  tests/test_m0_decode.py
+  tests/test_types_loader_smoke.py
+
+Added (16):
+  .gitignore
+  data/fixtures/synthetic/tiny_001.fjs
+  data/fixtures/synthetic/tiny_002.fjs
+  docs/workspace-notes-combo-b.md
+  pyproject.toml
+  requirements.txt
+  scripts/alns_k_eval_1000.py
+  src/sfjsp_alns/cp_fold.py
+  src/sfjsp_alns/data_layout.py
+  src/sfjsp_alns/io/fjs_text.py
+  src/sfjsp_alns/k_eval.py
+  src/sfjsp_alns/paths.py
+  src/sfjsp_alns/scenarios.py
+  tests/test_cp_fold.py
+  tests/test_fjs_io.py
+  tests/test_k_eval.py
+
+Seed README.md was replaced. Its previous text is docs/workspace-notes-combo-b.md.
+
+Unchanged from the seed (not bundled):
+  docs/draft-intro-related-work.md
+  docs/draft-method.md
+  docs/paper-outline-sfjsp-alns.md
+  results/p0-cp-stoch-summary.json
+  src/sfjsp_alns/__main__.py
+  src/sfjsp_alns/alns.py
+  src/sfjsp_alns/decode.py
+  src/sfjsp_alns/evaluate.py
+  src/sfjsp_alns/ils.py
+  src/sfjsp_alns/init_pdr.py
+  src/sfjsp_alns/instance_utils.py
+  src/sfjsp_alns/llm/__init__.py
+  src/sfjsp_alns/llm/selector.py
+  src/sfjsp_alns/operators/__init__.py
+  src/sfjsp_alns/operators/destroy.py
+  src/sfjsp_alns/operators/repair.py
+  src/sfjsp_alns/types.py
+
+Docs, tests, other scripts, fixtures, and pyproject.toml are on main and are
+listed above. They are not duplicated in this folder except README.md,
+requirements.txt, scripts/alns_k_eval_1000.py, and the src modules.

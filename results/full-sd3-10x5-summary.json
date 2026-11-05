@@ -1,0 +1,45 @@
+{
+  "n_instances": 100,
+  "seeds": [
+    50,
+    51,
+    52
+  ],
+  "k_eval": 100,
+  "eval_slice": [
+    250,
+    350
+  ],
+  "search_slice": [
+    0,
+    50
+  ],
+  "destroy": [
+    "random_ops",
+    "critical_path",
+    "high_var_ops",
+    "machine_load"
+  ],
+  "repair": [
+    "spt_biased"
+  ],
+  "alns_max_iter": 300,
+  "wall_total_s": 4111.220841169357,
+  "macro_mean_cmax": {
+    "FIFO": 646.9909999999999,
+    "MOR": 641.8862333333334,
+    "SPT": 794.0338666666665,
+    "MWKR": 636.6624,
+    "SA-ALNS": 582.2680333333333
+  },
+  "macro_mean_var95": {
+    "FIFO": 754.5978333333333,
+    "MOR": 749.9848333333332,
+    "SPT": 911.9455,
+    "MWKR": 741.6318333333332,
+    "SA-ALNS": 666.4543333333335
+  },
+  "spmdan": "N/A \u2014 pretrained weights unavailable",
+  "cp_stoch": "N/A \u2014 not run in this full pass",
+  "realization_note": "Generated with official lognormal random-CoV recipe, seed=200, NUM_SAMPLES=450 under /workspace/fjsp-combo-b/baselines/NCO-for-Stochastic-FJSP/FJSP-DRL/data/stochastic_realizations/random/SD3/10x5+mix (not identical to smoke_SD3 bank)."
+}

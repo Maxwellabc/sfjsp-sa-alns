@@ -1,0 +1,39 @@
+{
+  "protocol": {
+    "instances": 1,
+    "time_limit_s": 15.0,
+    "num_realizations_cp": 10,
+    "workers": 2,
+    "obj": "mean",
+    "eval_slice": [
+      250,
+      350
+    ],
+    "budget_label": "short",
+    "out_prefix": "p0-cp-stoch-smoke15s",
+    "note": "CP-stoch official code (FJSPmodel_stoch mean). Search on first K realizations; schedule decoded & re-eval on P0 held-out [250:350] with SA-ALNS decoder. Time limit 15.0s labeled **short-budget** \u2014 still << paper 3600s."
+  },
+  "n_feasible": 1,
+  "n_failed": 0,
+  "macro_mean_cmax": 707.31,
+  "macro_mean_var95": 876.3,
+  "macro_cp_obj_search": 663.8000000000001,
+  "mean_wall_s": 15.012,
+  "wall_total_s": 15.596488237380981,
+  "per_instance": [
+    {
+      "instance": "10x5+mix_001",
+      "status": "FEASIBLE",
+      "cp_obj_search": 663.8000000000001,
+      "cp_wall_s": 15.012,
+      "solution_count": 24,
+      "eval_mean_cmax": 707.31,
+      "eval_var95": 876.3,
+      "num_realizations_cp": 10,
+      "time_limit_s": 15.0,
+      "workers": 2,
+      "error": ""
+    }
+  ],
+  "spmdan_status": "N/A \u2014 blocked: no pretrained SPM-DAN/DAN-stoch checkpoints in NCO-for-Stochastic-FJSP (GitHub releases empty for FJSP weights); short CPU train unfair vs paper and missing deps (gym, torch_geometric, einops) at probe time."
+}
