@@ -1,0 +1,32 @@
+{
+  "macro_E": {
+    "MOR": 654.3096666666667,
+    "SA-ALNS": 597.1623333333334,
+    "CP-stoch-60s-K10": 618.9165,
+    "SPM-DAN": null
+  },
+  "macro_VaR95": {
+    "MOR": 762.6408333333333,
+    "SA-ALNS": 683.9783333333332,
+    "CP-stoch-60s-K10": 722.3475,
+    "SPM-DAN": null
+  },
+  "vs_MOR_pct": {
+    "SA-ALNS": -8.733988850335376,
+    "CP-stoch-60s-K10": -5.409237929644926
+  },
+  "alns_beats_cp_instances": 18,
+  "n_instances": 20,
+  "cp_protocol": {
+    "instances": 20,
+    "time_limit_s": 60,
+    "num_realizations_cp": 10,
+    "obj": "mean",
+    "eval_slice": [
+      250,
+      350
+    ],
+    "note": "CP-stoch official code (FJSPmodel_stoch mean). Search on first K realizations; schedule decoded & re-eval on P0 held-out [250:350] with SA-ALNS decoder. Time limit 60s << paper 3600s \u2014 labeled short-budget."
+  },
+  "spmdan": "N/A \u2014 blocked: no pretrained SPM-DAN/DAN-stoch checkpoints in NCO-for-Stochastic-FJSP (GitHub releases empty for FJSP weights); short CPU train unfair vs paper and missing deps (gym, torch_geometric, einops) at probe time."
+}

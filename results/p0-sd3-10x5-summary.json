@@ -1,0 +1,55 @@
+{
+  "n_instances": 20,
+  "seeds": [
+    50,
+    51,
+    52
+  ],
+  "k_eval": 100,
+  "eval_slice": [
+    250,
+    350
+  ],
+  "search_slice": [
+    0,
+    50
+  ],
+  "destroy": [
+    "random_ops",
+    "critical_path",
+    "high_var_ops",
+    "machine_load"
+  ],
+  "repair": [
+    "spt_biased"
+  ],
+  "alns_max_iter": 300,
+  "wall_total_s": 632.1124663352966,
+  "macro_mean_cmax": {
+    "FIFO": 661.1065000000001,
+    "MOR": 654.3096666666667,
+    "SPT": 823.8423333333334,
+    "MWKR": 654.1804999999999,
+    "SA-ALNS": 597.1623333333334
+  },
+  "macro_mean_var95": {
+    "FIFO": 770.3441666666666,
+    "MOR": 762.6408333333333,
+    "SPT": 943.425,
+    "MWKR": 763.5341666666666,
+    "SA-ALNS": 683.9783333333332
+  },
+  "spmdan": "N/A \u2014 no pretrained SPM-DAN/DAN-stoch FJSP checkpoints in public NCO-for-Stochastic-FJSP; short CPU retrain not fair and missing gym/torch_geometric/einops at probe",
+  "cp_stoch": {
+    "status": "ran",
+    "macro_mean_cmax": 618.9164999999999,
+    "macro_mean_var95": 722.3475,
+    "time_limit_s": 60,
+    "num_realizations_cp": 10,
+    "obj": "mean",
+    "n_feasible": 20,
+    "label": "CP-stoch short-budget (60s, K=10); not paper 3600s",
+    "results": "results/p0-cp-stoch.md"
+  },
+  "realization_note": "Generated with official lognormal random-CoV recipe, seed=200, NUM_SAMPLES=450 under /workspace/fjsp-combo-b/baselines/NCO-for-Stochastic-FJSP/FJSP-DRL/data/stochastic_realizations/random/SD3/10x5+mix (not identical to smoke_SD3 bank)."
+}
